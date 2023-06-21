@@ -1,0 +1,9 @@
+apiVersion: v2
+name: nginx-chart
+description: A nginx helm chart for Kubernetes
+
+# This is the chart version.
+version: 1.0.0
+
+# This is the version number of nginx service.
+appVersion: "1.25.1"

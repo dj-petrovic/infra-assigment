@@ -1,0 +1,36 @@
+# Default values for nginx-chart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# number of nginx replicas, must be between 1 and 10
+replicas: 1
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+# Content of the web page, can be any string.
+content: "Hello World"
+
+# whether to enable vault agent, must be true or false
+vaultEnabled: true
+
+
+# Used for testing with minikube.
+service:
+  type: NodePort
+  port: 80
+  targetPort: http
+  protocol: TCP
+  name: http
+
+
+# Enable if we need auto-scaling.
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
